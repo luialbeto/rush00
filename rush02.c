@@ -46,7 +46,7 @@ void	rush(int x, int y)
             }
 				linha++;
 			}
-			ft_putchar('\n');
+			ft_putchar('\n');	
 			coluna++;
 		}
 	}
