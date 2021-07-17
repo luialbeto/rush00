@@ -1,60 +1,53 @@
 #include <unistd.h>
-#include <stdio.h>
 
-void ft_putchar(char c);
+char	ft_putchar(char letter);
 
-int through_lines(int a, int b)
+void	rush(int x, int y)
 {
-    int i;
-    int j;
+	if (x == 1 && y == 1)
+	{		
+		ft_putchar('A');
+		ft_putchar('\n');
+	}
+	else
+	{
+		int	linha;
+		linha = 0;
+		int coluna;
+		coluna = 0;
 
-    //I or B are equal to lines
-    //J or A are equal to columns
-    // A B B A
-    // B     B
-    // C B B C
-
-    a = a-1;
-
-    for(i=0; i < b; i++)
-    {
-        if(i == 0){
-            ft_putchar('A');
-        }else if(i+1 == b){
-            ft_putchar('C');
-        }else{
-            ft_putchar('B');
-        }
-        
-        for(j=0; j < a; j++)
-        {   
-            if(((j+1) == a) && (i == 0)){
+		while(x > coluna)
+		{
+			if	(coluna == 0)
+			{
+				ft_putchar('A');
+			}
+			else if	(coluna + 1 == x)
+			{
+				ft_putchar('C');
+			}
+			else
+			{
+				ft_putchar('B');
+			}
+			while(y -1 > linha)
+			{
+				if(((coluna+1) == y) && (linha == 0))
+                {
                 ft_putchar('A');
-            }else if(((j+1) == a) && (i+1 == b))
+                }
+			else if(((coluna + 1) == y) && (linha + 1 == x))
             {
                 ft_putchar('C');
-            }else if((i==0) || (i+1 == b) || (j+1 == a)){
+            }else if((linha == 0) || (linha + 1 == y) || (coluna + 1 == x)){
                 ft_putchar('B');
             }else{
                 ft_putchar(' ');
             }
-        }
-
-
-        ft_putchar('\n');
-    }
+				linha++;
+			}
+			ft_putchar('\n');
+			coluna++;
+		}
+	}
 }
-
-
-int rush(int a, int b)
-{
-    if(a == 1 && b == 1)
-    {
-        ft_putchar('A');
-        ft_putchar('\n');
-    }else{
-        through_lines(a,b);
-    }
-       
-}
-
