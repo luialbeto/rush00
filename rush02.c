@@ -1,14 +1,15 @@
 #include <unistd.h>
-#include <stdio.h>
 
 char	ft_putchar(char letter);
 
 void	rush(int x, int y)
 {
+
 	/* 
 	Para facilitar a implementacao, comecamos com um caso onde sem implementar nenhum codigo conseguimos resolver
 	Pois em caso de (1,1) so sera printado a letra A
 	*/
+
 	if (x == 1 && y == 1)
 	{		
 		ft_putchar('A');
@@ -20,6 +21,7 @@ void	rush(int x, int y)
 		linha = 0;
 		int coluna;
 		coluna = 0;
+
         int z;
 
 		/*Inicio troca de valores
@@ -56,10 +58,18 @@ void	rush(int x, int y)
 			{
 				ft_putchar('A');
 			}/* Caso nao caia na primeira condição, podemos tambem observar que o primeiro caractere da ultima linha sempre vai ser C.Colocamos (coluna + 1) pois os valores se iniciam de 0, seria ou necessario subtrair de x, ou incrementar em coluna para poder comparar e verificar se e a ultima linha*/
+
+		while(x > coluna)
+		{
+			if	(coluna == 0)
+			{
+				ft_putchar('A');
+			}
 			else if	(coluna + 1 == x)
 			{
 				ft_putchar('C');
 			}
+
 			else /*E caso nao caia em nenhuma das condicoes, ou seja, quando nao e a ultima nem a primeira linha nos printamos B */
 			{
 				ft_putchar('B');
@@ -102,6 +112,31 @@ void	rush(int x, int y)
 
 			ft_putchar('\n');
             linha = 0;
+			coluna++;
+		}
+	}
+}
+			else
+			{
+				ft_putchar('B');
+			}
+			while(y -1 > linha)
+			{
+				if(((coluna+1) == y) && (linha == 0))
+                {
+                ft_putchar('A');
+                }
+			else if(((coluna + 1) == y) && (linha + 1 == x))
+            {
+                ft_putchar('C');
+            }else if((linha == 0) || (linha + 1 == y) || (coluna + 1 == x)){
+                ft_putchar('B');
+            }else{
+                ft_putchar(' ');
+            }
+				linha++;
+			}
+			ft_putchar('\n');
 			coluna++;
 		}
 	}
