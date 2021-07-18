@@ -38,24 +38,6 @@ void    rush_width(int X, int altura, int Y)
     }
 }
 
-/*void  rush_height(int Y)
-{
-    int altura;
-    while (height <= Y)
-    {
-        if (height == Y)
-        {
-            ft_putchar('C');
-        }
-        else if(height != 0)
-        {
-            ft_putchar('B');
-        }
-        ft_putchar('\n');
-        height++;
-    }
-}*/
-
 void    rush(int X, int Y)
 {
     int altura;
