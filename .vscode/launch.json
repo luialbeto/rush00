@@ -12,7 +12,7 @@
       "program": "/home/araujo/rushTest/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
       "externalConsole": false
     }
   ]

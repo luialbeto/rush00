@@ -5,7 +5,7 @@ int rush(int a, int b);
 
 int main(void)
 {
-    rush(5,3);
+    rush(1,1);
 
     return (0);
 }
